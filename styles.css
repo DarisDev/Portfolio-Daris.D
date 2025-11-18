@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FF512F, #DD2476, #F3A183, #FCE38A, #FCFEF4);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.top-right-menu {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.top-right-menu li {
+    margin-left: 20px;
+    font-family: 'Georgia', serif; /* A more elegant font */
+    font-size: 18px; /* Slightly larger font size */
+    color: rgba(211, 48, 20, 0.913);
+    text-transform: capitalize; /* Capitalizes first letters */
+    letter-spacing: 2px; /* Adds spacing between letters */
+    
+    cursor: pointer; /* Makes the text look clickable */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Add hover effect */
+.top-right-menu li:hover {
+    color: #d68b3a; /* Changes color on hover */
+    text-shadow: 2px 2px 4px rgb(202, 117, 33); /* Enhances shadow on hover */
+}
+
+.top-right-menu a {
+    text-decoration: none;
+    color: inherit;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.top-right-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    color: #2c1810;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
