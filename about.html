@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://www.svgrepo.com/show/535574/planet.svg" />
+  <title>About • Daris Dervishaga</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <ul class="top-right-menu">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+
+  <h1 style="margin-left:130px; margin-top:130px;">About Me</h1>
+  <p style="color:aquamarine; margin-left:130px; max-width:750px;">
+    I’m Daris, a Web Developer focused on building smooth, delightful interfaces.
+    I enjoy React, clean CSS, and crafting micro-interactions that make UIs feel alive.
+  </p>
+
+  <div id="about-root" style="margin: 40px 130px;"></div>
+
+  <script type="text/babel" data-presets="react" src="about.jsx"></script>
+</body>
+</html>
