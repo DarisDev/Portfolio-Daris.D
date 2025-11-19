@@ -69,38 +69,40 @@ function createParticle(container) {
     const duration = Math.random() * 10 + 15;
     const delay = Math.random() * 5;
     
-    particle.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        background: rgba(255, 255, 255, 0.6);
-        border-radius: 50%;
-        left: ${startX}%;
-        bottom: -10px;
-        animation: float ${duration}s ${delay}s infinite ease-in-out;
-    `;
+    // set dynamic dimensions & position; visual styles & animation keyframes moved to CSS
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.left = `${startX}%`;
+    particle.style.bottom = '-10px';
+    // per-particle translate offset using CSS custom property
+    particle.style.setProperty('--translateX', `${Math.random() * 100 - 50}px`);
+    particle.style.animation = `float ${duration}s ${delay}s infinite ease-in-out`;
     
     container.appendChild(particle);
 }
 
-// Add CSS animation for particles
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes float {
-        0% {
-            transform: translateY(0) translateX(0);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
-            opacity: 0;
-        }
+// Keyframes and base particle styles are now declared in `styles.css` so we remove dynamic injection.
+
+// Moodboard Generator functionality
+(function () {
+  const ideas = [
+    'Neo-brutalist dashboard with chunky typography.',
+    'Calm productivity app using misty gradients.',
+    'Playful onboarding flow inspired by arcade cabinets.',
+    'Speculative weather UI blending particles and glassmorphism.',
+    'Developer journal with tactile cards and sticky ink effects.',
+  ];
+
+  const messageEl = document.getElementById('moodboard-message');
+  const buttonEl = document.getElementById('moodboard-button');
+
+  if (messageEl && buttonEl) {
+    function setRandomIdea() {
+      const idea = ideas[Math.floor(Math.random() * ideas.length)];
+      messageEl.textContent = idea;
     }
-`;
-document.head.appendChild(style);
+
+    buttonEl.addEventListener('click', setRandomIdea);
+    setRandomIdea();
+  }
+})();
