@@ -57,5 +57,27 @@
   </section>
 
   <script type="text/babel" data-presets="react" src="about.jsx"></script>
+  <script>
+    (function () {
+      const ideas = [
+        'Neo-brutalist dashboard with chunky typography.',
+        'Calm productivity app using misty gradients.',
+        'Playful onboarding flow inspired by arcade cabinets.',
+        'Speculative weather UI blending particles and glassmorphism.',
+        'Developer journal with tactile cards and sticky ink effects.',
+      ];
+
+      const messageEl = document.getElementById('moodboard-message');
+      const buttonEl = document.getElementById('moodboard-button');
+
+      function setRandomIdea() {
+        const idea = ideas[Math.floor(Math.random() * ideas.length)];
+        messageEl.textContent = idea;
+      }
+
+      buttonEl.addEventListener('click', setRandomIdea);
+      setRandomIdea();
+    })();
+  </script>
 </body>
 </html>
