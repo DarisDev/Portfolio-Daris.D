@@ -17,67 +17,26 @@
     <li><a href="about.html">About</a></li>
   </ul>
 
-  <h1 style="margin-left:130px; margin-top:130px;">About Me</h1>
-  <p style="color:aquamarine; margin-left:130px; max-width:750px;">
-    I’m Daris, a Web Developer focused on building smooth, delightful interfaces.
-    I enjoy React, clean CSS, and crafting micro-interactions that make UIs feel alive.
-  </p>
-
-  <div id="about-root" style="margin: 40px 130px;"></div>
-
-  <section
-    style="
-      margin: 40px 130px 80px;
-      padding: 24px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
-      max-width: 780px;
-    "
-  >
-    <h2 style="margin-top: 0;">Moodboard Generator</h2>
-    <p id="moodboard-message" style="margin-bottom: 20px;">
-      Tap the button to see what vibe I’m building with today.
+  <div class="about-page">
+    <h1>About Me</h1>
+    <p class="about-intro">
+      I'm Daris, a Web Developer focused on building smooth, delightful interfaces.
+      I enjoy React, clean CSS, and crafting micro-interactions that make UIs feel alive.
     </p>
-    <button
-      id="moodboard-button"
-      style="
-        padding: 12px 28px;
-        border-radius: 999px;
-        border: none;
-        font-size: 1rem;
-        cursor: pointer;
-        color: #0f172a;
-        background: linear-gradient(120deg, #7efad0, #61dafb);
-        box-shadow: 0 8px 18px rgba(97, 218, 251, 0.35);
-      "
-    >
-      New vibe
-    </button>
-  </section>
+
+    <div id="about-root"></div>
+
+    <section class="moodboard-section">
+      <h2>Moodboard Generator</h2>
+      <p id="moodboard-message">
+        Tap the button to see what vibe I'm building with today.
+      </p>
+      <button id="moodboard-button">
+        New vibe
+      </button>
+    </section>
+  </div>
 
   <script type="text/babel" data-presets="react" src="about.jsx"></script>
-  <script>
-    (function () {
-      const ideas = [
-        'Neo-brutalist dashboard with chunky typography.',
-        'Calm productivity app using misty gradients.',
-        'Playful onboarding flow inspired by arcade cabinets.',
-        'Speculative weather UI blending particles and glassmorphism.',
-        'Developer journal with tactile cards and sticky ink effects.',
-      ];
-
-      const messageEl = document.getElementById('moodboard-message');
-      const buttonEl = document.getElementById('moodboard-button');
-
-      function setRandomIdea() {
-        const idea = ideas[Math.floor(Math.random() * ideas.length)];
-        messageEl.textContent = idea;
-      }
-
-      buttonEl.addEventListener('click', setRandomIdea);
-      setRandomIdea();
-    })();
-  </script>
 </body>
 </html>
